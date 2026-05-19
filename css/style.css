@@ -74,3 +74,65 @@ input[type="text"]:focus {
   outline: none;
   border-color: var(--accent);
 }
+
+/* =================
+ BOTÃO
+==================*/
+button {
+  background-color: var(--accent);
+  color: var(--bg-card);
+  border: none;
+  padding: 0.75rem 1.125rem;
+  border-radius: 0.625rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--accent-hover);
+}
+
+/* =================
+ LISTA DE TAREFAS
+==================*/
+ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+li {
+  padding: 0.875rem;
+  border-bottom: 0.0625rem solid var(--border-light);
+  font-size: 0.95rem;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+/* =================
+ MENSAGENS
+==================*/
+#mensagem {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+}
+
+#mensagem.erro {
+  color: var(--error);
+}
+
+#mensagem.sucesso {
+  color: var(--success);
+}
+
+/* =================
+ DICA EXTERNA
+==================*/
+#dica {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
