@@ -17,6 +17,21 @@ export function adicionarTarefa(texto) {
   return tarefa;
 }
 
+// Marca ou desmarca uma tarefa como concluída
+export function concluirTarefa(id) {
+  tarefas = tarefas.map((tarefa) => {
+    if (tarefa.id === id) {
+      return { ...tarefa, concluida: !tarefa.concluida };
+    }
+    return tarefa;
+  });
+}
+
+// Remove uma tarefa da lista
+export function removerTarefa(id) {
+  tarefas = tarefas.filter((tarefa) => tarefa.id !== id);
+}
+
 // Função para validar o texto da tarefa
 export function validarTarefa(texto) {
   if (texto.trim() === "") {
