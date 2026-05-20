@@ -1,9 +1,29 @@
 // Este módulo é responsável por validar as tarefas antes de adiciona-las
 
-// Função para validar o texto da terefa, tem que ter ao menos 3 caracteres
+const STORAGE_KEY = "taskdev-tarefas";
 
 // Array para armazenar as tarefas
 let tarefas = [];
+
+function salvarTarefas() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(tarefas));
+}
+
+function carregarTarefas() {
+  const dados = localStorage.getItem(STORAGE_KEY);
+  if (!dados) return;
+
+  try {
+    const armazenadas = JSON.parse(dados);
+    if (Array.isArray(armazenadas)) {
+      tarefas = armazenadas;
+    }
+  } catch (error) {
+    console.warn("Falha ao carregar tarefas do localStorage:", error);
+  }
+}
+
+carregarTarefas();
 
 // Função para adicionar uma nova tarefa
 export function adicionarTarefa(texto) {
@@ -14,6 +34,7 @@ export function adicionarTarefa(texto) {
   };
 
   tarefas.push(tarefa);
+  salvarTarefas();
   return tarefa;
 }
 
@@ -25,11 +46,13 @@ export function concluirTarefa(id) {
     }
     return tarefa;
   });
+  salvarTarefas();
 }
 
 // Remove uma tarefa da lista
 export function removerTarefa(id) {
   tarefas = tarefas.filter((tarefa) => tarefa.id !== id);
+  salvarTarefas();
 }
 
 // Função para validar o texto da tarefa

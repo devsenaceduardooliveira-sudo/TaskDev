@@ -94,6 +94,51 @@ button:hover {
   background-color: var(--accent-hover);
 }
 
+.hidden {
+  display: none;
+}
+
+.login-screen #form-login,
+.task-screen #form-tarefa {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+#form-login h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+#form-login input[type="text"],
+#form-login input[type="password"] {
+  width: 100%;
+}
+
+.app-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+#logout-btn {
+  background-color: #6c6c6f;
+}
+
+#logout-btn:hover {
+  background-color: #4f4f54;
+}
+
+#mensagem-login {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--error);
+}
+
 /* =================
  LISTA DE TAREFAS
 ==================*/

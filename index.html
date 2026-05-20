@@ -14,12 +14,43 @@
     <title>TaskDev</title>
   </head>
   <body>
-    <div class="app">
+    <div class="app login-screen" id="login-screen">
       <header class="app-header">
         <h1>TaskDev</h1>
       </header>
 
       <main class="app-content">
+        <form id="form-login" aria-label="Login do TaskDev">
+          <h2>Entrar</h2>
+          <input
+            type="text"
+            id="input-login"
+            placeholder="Seu nome"
+            aria-label="Nome de usuário"
+          />
+          <input
+            type="password"
+            id="input-senha"
+            placeholder="Senha"
+            aria-label="Senha"
+          />
+          <button type="submit">Entrar</button>
+          <p id="mensagem-login" role="status" aria-live="polite"></p>
+        </form>
+      </main>
+    </div>
+
+    <div class="app task-screen hidden" id="task-screen">
+      <header class="app-header">
+        <h1>TaskDev</h1>
+      </header>
+
+      <main class="app-content">
+        <div class="app-toolbar">
+          <p id="welcome-usuario"></p>
+          <button type="button" id="logout-btn">Sair</button>
+        </div>
+
         <form id="form-tarefa" aria-label="Adicionar nova tarefa">
           <input
             type="text"
